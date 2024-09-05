@@ -1,0 +1,89 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.form-geral {
+    background-color: auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 30%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.social-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    width: 10%;
+    font-size: 16px;
+    margin: 0 40px 0 30px;
+}
+
+.whatsapp-button {
+    background-color: #25D366;
+}
+
+.instagram-button {
+    background-color: #E4405F;
+}
