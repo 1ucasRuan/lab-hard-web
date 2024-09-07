@@ -4,6 +4,7 @@
 ## Tecnologias utilizadas
     HTML, CSS, JavaScript, Node.Js e MongoDB.
 ## Frameworks
+<<<<<<< HEAD
     Angular ou Vue, futuras implementações.
 
 ### Implementações futuras
@@ -22,3 +23,9 @@ $ npm install express mongoose bcryptjs jsonwebtoken cors
 ```bash
 $ node server.js
 ```
+=======
+
+
+### Implementações
+   
+>>>>>>> 0b3a26f15890460f29e3141685714289db9b9566
