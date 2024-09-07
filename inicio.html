@@ -28,13 +28,20 @@
                     <li class="sobre"><a href="sobre.html">Sobre</a></li>
                 </ul>
             </div>
-            
+
             <div class="right-menu">
                 <ul>
                     <li class="login"><a href="#" id="loginBtn">Login</a></li>
                     <li class="register"><a href="#" id="registerBtn">Cadastrar</a></li>
+                    <li id="user-name" style="display: none;"></li>
                 </ul>
             </div>
+
+            <!-- <div>
+                <span id="user-name" style="display:none;"></span>
+                <button id="logoutBtn" style="display:none;">Sair</button>
+            </div>] -->
+
         </nav>
     </header>
 
@@ -49,7 +56,7 @@
                 <div class="slides">
                     <div class="slide"><img src="src/assets/images/image1.jpg" alt="Image 1"></div>
                     <div class="slide"><img src="src/assets/images/image2.jpg" alt="Image 2"></div>
-                    <div class="slide"><img src="src/assets/images/image3.jpg" alt="Image 3"></div>                    
+                    <div class="slide"><img src="src/assets/images/image3.jpg" alt="Image 3"></div>
 
                 </div>
             </div>
@@ -61,7 +68,7 @@
             <div class="modal-content">
                 <span class="close" id="closeLogin">&times;</span>
                 <h2>Login</h2>
-                <form>
+                <form id="loginForm">
                     <label for="loginEmail">Email:</label>
                     <input type="email" id="loginEmail" name="loginEmail" required>
                     <label for="loginPassword">Senha:</label>
@@ -75,13 +82,13 @@
             <div class="modal-content">
                 <span class="close" id="closeRegister">&times;</span>
                 <h2>Cadastrar</h2>
-                <form>
+                <form id="registerForm">
                     <label for="registerEmail">Email:</label>
                     <input type="email" id="registerEmail" name="registerEmail" required>
                     <label for="registerPassword">Senha:</label>
                     <input type="password" id="registerPassword" name="registerPassword" required>
-                    <label for="registerConfirmPassword">Confirmar Senha:</label>
-                    <input type="password" id="registerConfirmPassword" name="registerConfirmPassword" required>
+                    <label for="registerFirstName">Nome:</label>
+                    <input type="text" id="registerFirstName" name="registerFirstName" required>
                     <button type="submit">Cadastrar</button>
                 </form>
             </div>

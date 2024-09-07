@@ -1,37 +1,33 @@
-// Obtém os modais
-var loginModal = document.getElementById("loginModal");
-var registerModal = document.getElementById("registerModal");
+const loginModal = document.getElementById("loginModal");
+const registerModal = document.getElementById("registerModal");
+const loginBtn = document.getElementById("loginBtn");
+const registerBtn = document.getElementById("registerBtn");
+const closeLogin = document.getElementById("closeLogin");
+const closeRegister = document.getElementById("closeRegister");
+const userNameDisplay = document.getElementById("user-name");
 
-// Obtém os botões que abrem os modais
-var loginBtn = document.getElementById("loginBtn");
-var registerBtn = document.getElementById("registerBtn");
-
-// Obtém os elementos <span> que fecham os modais
-var closeLogin = document.getElementById("closeLogin");
-var closeRegister = document.getElementById("closeRegister");
-
-// Quando o usuário clica no botão, abre o modal de login
-loginBtn.onclick = function() {
+// Abrir modal de login
+loginBtn.onclick = function () {
     loginModal.style.display = "block";
 }
 
-// Quando o usuário clica no botão, abre o modal de cadastro
-registerBtn.onclick = function() {
+// Abrir modal de cadastro
+registerBtn.onclick = function () {
     registerModal.style.display = "block";
 }
 
-// Quando o usuário clica em <span> (x), fecha o modal de login
-closeLogin.onclick = function() {
+// Fechar modal de login
+closeLogin.onclick = function () {
     loginModal.style.display = "none";
 }
 
-// Quando o usuário clica em <span> (x), fecha o modal de cadastro
-closeRegister.onclick = function() {
+// Fechar modal de cadastro
+closeRegister.onclick = function () {
     registerModal.style.display = "none";
 }
 
-// Quando o usuário clica em qualquer lugar fora do modal, fecha os modais
-window.onclick = function(event) {
+// Fechar modal clicando fora dele
+window.onclick = function (event) {
     if (event.target == loginModal) {
         loginModal.style.display = "none";
     }
@@ -40,26 +36,71 @@ window.onclick = function(event) {
     }
 }
 
-// Slider logic
-let slideIndex = 0;
-const slides = document.querySelector('.slides');
+// Função para registrar usuário
+document.getElementById('registerForm').onsubmit = async function (event) {
+    event.preventDefault();
+    const firstName = document.getElementById('registerFirstName').value;
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
 
-function showSlide(index) {
-    const totalSlides = document.querySelectorAll('.slide').length;
-    if (index >= totalSlides) {
-        slideIndex = 0;
-    } else if (index < 0) {
-        slideIndex = totalSlides - 1;
+    const response = await fetch('http://localhost:3000/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ firstName, email, password })
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+        alert(result.message);
+        registerModal.style.display = 'none';
     } else {
-        slideIndex = index;
+        alert(result.message);
     }
-    slides.style.transform = `translateX(${-slideIndex * 100}%)`;
 }
 
-function moveSlide(n) {
-    showSlide(slideIndex + n);
+// Função para logar usuário
+document.getElementById('loginForm').onsubmit = async function (event) {
+    event.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    const response = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+        // Armazene o token e o nome no localStorage
+        localStorage.setItem('token', result.token);
+        localStorage.setItem('firstName', result.firstName);
+
+        showUserName(result.firstName);
+        loginModal.style.display = 'none';
+    } else {
+        alert(result.message);
+    }
 }
 
+// Função para mostrar o nome do usuário e esconder os botões de login/cadastro
+function showUserName(firstName) {
+    userNameDisplay.textContent = `Olá, ${firstName}`;
+    userNameDisplay.style.display = 'block';
+    loginBtn.style.display = 'none';
+    registerBtn.style.display = 'none';
+}
+
+// Verificar se o usuário já está logado ao carregar a página
 document.addEventListener('DOMContentLoaded', function () {
-    showSlide(slideIndex);
+    const token = localStorage.getItem('token');
+    const firstName = localStorage.getItem('firstName');
+
+    if (token && firstName) {
+        showUserName(firstName);
+    }
 });
