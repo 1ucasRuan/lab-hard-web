@@ -1,16 +1,42 @@
+.container {
+    max-width: 1600px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
 .sobre-nos {
-    color: black;
-    margin: 50px 0px 0px 50px;
+    background-color: auto;    
+    padding: 40px;
+    border-radius: 8px;    
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 30px;
+    color: #000;
+    margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 28px;
+    color: #000;
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
-p {
+.textSobre {
+    color: #000;
     font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.valores{
+    font-size: 18px;
+    line-height: 1.6;
 }

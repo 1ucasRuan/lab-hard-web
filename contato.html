@@ -31,38 +31,122 @@
                     <li class="sobre"><a href="sobre.html">Sobre</a></li>
                 </ul>
             </div>
+
+            <div class="right-menu">
+                <ul>
+                    <li class="login"><a href="#" id="loginBtn">Login</a></li>
+                    <li class="register"><a href="#" id="registerBtn">Cadastrar</a></li>
+                    <li id="user-name" style="display: none;"></li>
+                    <li id="profiletBtn" style="display: none;"><a href="configuracoes.html">Perfil</a></li>
+                    <li id="logoutBtn" style="display: none;"><a href="#">Sair</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
 
     <div class="container">
         <div class="wrapper">
+            <section class="formulario">
+                <h2>Caso você deseje entrar em contato conosco, você pode utilizar o email contato.labhard@gmail.com ou
+                    o
+                    formulário abaixo.</h1>
+                    <form id="contactForm">
+
+                        <label for="contactName">Nome:</label>
+                        <input type="text" id="contactName" name="contactName" required>
+
+                        <label for="contactEmail">Email:</label>
+                        <input type="email" id="contactEmail" name="contactEmail" required>
+
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="15" required></textarea>
+
+                        <button id="submit" type="submit">Enviar Feedback</button>
+                    </form>
+            </section>
+        </div>
+
+        <!-- <div class="wrapper">
             <div class="form-geral">
                 <h2>Formulário de Contato</h2>
                 <form action="process_form.php" method="post">
                     <div class="form-group">
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
+                        <label for="contactName">Nome:</label>
+                        <input type="text" id="contactName" name="contactName" required>
+
+                        <label for="contactEmail">Email:</label>
+                        <input type="email" id="contactEmail" name="contactEmail" required>
+
                         <label for="mensagem">Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                        <textarea id="mensagem" name="mensagem" rows="15" required></textarea>
                     </div>
                     <button type="submit">Enviar</button>
                 </form>
             </div>
 
-        </div>
-        
+        </div> -->
+
         <h2>Visite nossas redes sociais 👇</h2>
         <div class="social-buttons">
             <a href="https://wa.me/seu-numero-de-whatsapp" target="_blank" class="whatsapp-button">WhatsApp</a>
             <a href="https://www.instagram.com/seu-perfil-de-instagram" target="_blank"
                 class="instagram-button">Instagram</a>
+        </div>
+
+        <!-- Modal de Login -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeLogin">&times;</span>
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                    <label for="loginPassword">Senha:</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+        </div>
+        <!-- Modal de Cadastro -->
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeRegister">&times;</span>
+                <h2>Cadastrar</h2>
+                <form id="registerForm">
+
+                    <label for="registerFirstName">Nome:</label>
+                    <input type="text" id="registerFirstName" name="registerFirstName" required>
+
+                    <label for="registerEmail">Email (Preferência Institucional) :</label>
+                    <input type="email" id="registerEmail" name="registerEmail" required>
+
+                    <label for="registerRegistrationNumber">Número de Matrícula:</label>
+                    <input type="text" id="registerRegistrationNumber" name="registerRegistrationNumber" required>
+
+                    <label for="registerCurrentPeriod">Período Atual:</label>
+                    <select id="registerCurrentPeriod" name="registerCurrentPeriod" required>
+                        <option value="1º">1º</option>
+                        <option value="2º">2º</option>
+                        <option value="3º">3º</option>
+                        <option value="4º">4º</option>
+                        <option value="5º">5º</option>
+                        <option value="6º">6º</option>
+                        <option value="7º">7º</option>
+                        <option value="8º">8º</option>
+                        <option value="9º">9º</option>
+                        <option value="10º">10º</option>
+                    </select>
+
+                    <label for="registerPassword">Senha:</label>
+                    <input type="password" id="registerPassword" name="registerPassword" required>
+
+                    <label for="registerConfirmPassword">Confirmar Senha:</label>
+                    <input type="password" id="registerConfirmPassword" name="registerConfirmPassword" required>
+
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -72,6 +156,8 @@
 
     </footer>
 
+    <script src="src/scripts/script.js"></script>
+    <script src="src/scripts/configuracoes.js"></script>
 </body>
 
 </html>

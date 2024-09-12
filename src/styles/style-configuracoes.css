@@ -1,0 +1,49 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.settings {
+    background-color: auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 40%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+}
+
+.settingsForm {
+    margin-bottom: 15px;
+}
+
+.settingsForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+.settingsForm input,
+.settingsForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+.settingsForm textarea {
+    resize: vertical;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

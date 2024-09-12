@@ -1,13 +1,13 @@
 .wrapper {
-    display: flex;
+    display:flex;
     justify-content: center;
 }
 
-.form-geral {
+.formulario {
     background-color: auto;
     padding: 20px;
     border-radius: 8px;
-    max-width: 30%;
+    max-width: 40%;
     width: 100%;
     box-sizing: border-box;
 }
@@ -19,19 +19,19 @@ h2 {
     text-align: center;
 }
 
-.form-group {
+#contactForm {
     margin-bottom: 15px;
 }
 
-.form-group label {
+#contactForm label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: black;
 }
 
-.form-group input,
-.form-group textarea {
+#contactForm input,
+#contactForm textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -40,25 +40,8 @@ h2 {
     color: #333;
 }
 
-.form-group textarea {
+#contactForm textarea {
     resize: vertical;
-}
-
-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100%;
-}
-
-button:hover {
-    background-color: #0056b3;
 }
 
 .social-buttons {

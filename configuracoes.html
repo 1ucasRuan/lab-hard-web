@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/styles/global.css">
+    <link rel="stylesheet" href="./src/styles/style-configuracoes.css">
+    <title>Perfil</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left-menu">
+                <img src="src/assets/images/labHard.png" alt="Logo" class="logo">
+                <ul>
+                    <li class="home"><a href="inicio.html">Inicio</a></li>
+                    <li class="servicos"><a href="servicos.html">Serviços</a></li>
+                    <li class="galeria"><a href="galeria.html">Galeria</a></li>
+                    <li class="contato"><a href="contato.html">Contato</a></li>
+                    <li class="sobre"><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="wrapper">
+            <section class="settings">
+                <h2>Informações do perfil:</h1>
+                    <form id="settingsForm">
+                        <label for="updateFirstName">Nome:</label>
+                        <input type="text" id="updateFirstName" name="updateFirstName" required>
+
+                        <label for="updateEmail">Email:</label>
+                        <input type="email" id="updateEmail" name="updateEmail" required>
+
+                        <label for="updateCurrentPeriod">Período Atual:</label>
+                        <select id="updateCurrentPeriod" name="updateCurrentPeriod" required>
+                            <option value="1º">1º</option>
+                            <option value="2º">2º</option>
+                            <option value="3º">3º</option>
+                            <option value="4º">4º</option>
+                            <option value="5º">5º</option>
+                            <option value="6º">6º</option>
+                            <option value="7º">7º</option>
+                            <option value="8º">8º</option>
+                            <option value="9º">9º</option>
+                            <option value="10º">10º</option>
+                        </select>
+
+                        <label for="updateRegistrationNumber">Número de Matrícula:</label>
+                        <input type="text" id="updateRegistrationNumber" name="updateRegistrationNumber" required>
+
+                        <button type="submit">Atualizar dados</button>
+                    </form>
+            </section>
+        </div>
+
+        <!-- implementar tabela com dados de emprestimos -->
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Laboratório de Eletrônica LabHard. Todos os direitos reservados.</p>
+    </footer>
+    <script src="src/scripts/configuracoes.js"></script>
+</body>
+
+</html>
